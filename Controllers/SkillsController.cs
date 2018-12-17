@@ -10,11 +10,11 @@ namespace GeekHunter.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class CandidateController : ControllerBase
+    public class SkillsController : ControllerBase
     {
         private readonly GeekHunterContext _ctx;
 
-        public CandidateController(GeekHunterContext ctx)
+        public SkillsController(GeekHunterContext ctx)
         {
             _ctx = ctx;
         }
@@ -22,11 +22,9 @@ namespace GeekHunter.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-            return Ok(await _ctx.Candidate.Include(c => c.Skills).Select(c => new {
-                c.Id,
-                c.FirstName,
-                c.LastName,
-                Skills = c.Skills.Select(s => s.Skill.Name),
+            return Ok(await _ctx.Skill.Select(s => new {
+                s.Id,
+                s.Name,
             }).ToArrayAsync());
         }
     }

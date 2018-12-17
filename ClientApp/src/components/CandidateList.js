@@ -1,5 +1,6 @@
 import React from 'react';
-import { Table } from 'reactstrap';
+import { Link } from 'react-router-dom';
+import { Button, Table } from 'reactstrap';
 import { fetchCandidates } from '../api';
 
 export default class CandidateList extends React.PureComponent {
@@ -33,6 +34,7 @@ export default class CandidateList extends React.PureComponent {
                     </tr>)}
                 </tbody>
             </Table>
+            <Button color='primary' tag={Link} to='/add'>Add Candidate</Button>
         </div>
     }
 }

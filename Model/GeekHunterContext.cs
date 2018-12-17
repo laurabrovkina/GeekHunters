@@ -32,7 +32,7 @@ namespace GeekHunter.Model
 
             modelBuilder.Entity<Candidate>(entity =>
             {
-                entity.Property(e => e.Id).ValueGeneratedNever();
+                entity.Property(e => e.Id).ValueGeneratedOnAdd();
 
                 entity.Property(e => e.FirstName).IsRequired();
 

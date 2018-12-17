@@ -1,0 +1,13 @@
+.CandidateForm select.skills {
+    height: 10rem;
+}
+
+.CandidateForm .hint {
+    margin-left: .25rem;
+    font-size: x-small;
+    color: gray;
+}
+
+.CandidateForm .btn+.btn {
+    margin-left: .5rem;
+}
