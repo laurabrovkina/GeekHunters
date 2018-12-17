@@ -22,7 +22,12 @@ namespace GeekHunter.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-            return Ok(await _ctx.Candidate.ToArrayAsync());
+            return Ok(await _ctx.Candidate.Include(c => c.Skills).Select(c => new {
+                c.Id,
+                c.FirstName,
+                c.LastName,
+                Skills = c.Skills.Select(s => s.Skill.Name),
+            }).ToArrayAsync());
         }
     }
 }

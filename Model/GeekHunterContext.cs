@@ -45,6 +45,14 @@ namespace GeekHunter.Model
 
                 entity.Property(e => e.Name).IsRequired();
             });
+
+            modelBuilder.Entity<CandidateSkill>(entity => {
+                entity.HasKey(e => new { e.CandidateId, e.SkillId });
+
+                entity.HasOne(e => e.Candidate).WithMany(e => e.Skills).HasForeignKey(e => e.CandidateId);
+
+                entity.HasOne(e => e.Skill).WithMany(e => e.Candidates).HasForeignKey(e => e.SkillId);
+            });
         }
     }
 }

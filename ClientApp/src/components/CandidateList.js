@@ -22,12 +22,14 @@ export default class CandidateList extends React.PureComponent {
                     <tr>
                         <th>First Name</th>
                         <th>Last Name</th>
+                        <th>Skills</th>
                     </tr>
                 </thead>
                 <tbody>
                     {this.state.list.map(c => <tr key={c.id}>
                         <td>{c.firstName}</td>
                         <td>{c.lastName}</td>
+                        <td>{c.skills.join(', ')}</td>
                     </tr>)}
                 </tbody>
             </Table>

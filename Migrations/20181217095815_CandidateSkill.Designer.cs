@@ -2,14 +2,16 @@
 using GeekHunter.Model;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace GeekHunter.Migrations
 {
     [DbContext(typeof(GeekHunterContext))]
-    partial class GeekHunterContextModelSnapshot : ModelSnapshot
+    [Migration("20181217095815_CandidateSkill")]
+    partial class CandidateSkill
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
