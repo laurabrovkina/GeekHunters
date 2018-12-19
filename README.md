@@ -14,11 +14,11 @@ Another developer has partially designed and implemented a
 SQLite DB for this project - GeekHunters.sqlite. Feel free to modify a structure to
 your needs.
 
-Please fork the project and commit your source code (please do not archive it :) ).
-
-You are free to use **ANY** .net web frameworks you need - aspnet / webapi / spa etc. However, if you decide to go with third
-party package manager or dev tool - don't forget to mention them in the
-README.md of your fork.
+GRS is built using the following technology stack:
+  - `ASP.NET Core` for the backend
+  - `ASP.NET Core MVC` for API Controllers
+  - `EntityFramework Core` for accessing the DB
+  - `React.js` for the frontend
 
 Good luck!
 
